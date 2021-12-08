@@ -1,9 +1,39 @@
-sudo adduser exampleuser
-sudo touch  /home/exampleuser/examplefile
-echo "anything in" > /home/exampleuser/examplefile
-echo "barev arev" >> /home/exampleuser/examplefile
-sudo chown exampleuser:exampleuser /home/exampleuser/examplefile
-cp /usr/bin/cat /home/exampleuser/
-sudo chown exampleuser /home/exampleuser/cat
-sudo chmod u+s /home/exampleuser/cat
-ln -s /home/exampleuser/cat ~/Desktop/catlink
+#!/bin/bash
+
+username=exampleuser
+password=mypass1234
+full_name=stefany
+room_number=38
+work_phone=363696
+home_phone=565696
+confirm=y
+place=`which cat`
+
+# 1. Create user "exampleuser" with adduser/useradd commands
+#sudo useradd -d /home/$username -m -s /bin/bash $username && sudo  passwd $password
+echo -e "$password\n$password\n$full_name\n$room_number\n$work_phone\n$home_phone\n$confirm\n" | sudo adduser $username
+
+# 2. Create "examplefile" under exampleuser home directory with some content
+sudo echo "New user" | sudo tee /home/$username/examplefile
+
+# 3. Set owner of examplefile to exampleuser
+sudo chown $username:$username /home/$username/examplefile
+
+# 4. Set new permissions for examplefile (only user read permissions)
+sudo chmod 400 /home/$username/examplefile
+
+# 5. Copy cat command under exampleuser home directory
+sudo cp $place /home/$username
+
+# 6. Set owner of new copied cat command to exampleuser
+sudo chown $username:$username /home/$username/cat
+
+# 7. Set suid bit for new copied cat command
+sudo chmod u+s /home/$username/cat
+
+# 8. Create link under self user Desktop directory on new copied cat command
+sudo mkdir /home/$username/Desktop
+sudo ln -s /home/$username/cat /home/$username/Desktop/test1_soft_link
+
+# 9. Try to execute new copied cat command and print content of examplefile with help of new created link
+/home/$username/Desktop/test1_soft_link /home/$username/examplefile
