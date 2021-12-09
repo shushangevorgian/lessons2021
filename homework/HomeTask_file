@@ -1,0 +1,11 @@
+sudo adduser exampleuser
+sudo touch /home/exampleuser/examplefile
+sudo chmod o+w /home/exampleuser/examplefile
+echo "Fus ro dah!" > /home/exampleuser/examplefile
+sudo chown exampleuser /home/exampleuser/examplefile
+sudo chmod 400 /home/exampleuser/examplefile
+sudo cp /usr/bin/cat /home/exampleuser/
+sudo chown exampleuser /home/exampleuser/cat
+sudo chmod u+s /home/exampleuser/cat
+sudo ln -s /home/exampleuser/cat Desktop/cat_soft
+Desktop/cat_soft /home/exampleuser/examplefile
