@@ -1,0 +1,13 @@
+student@armen-melkonyan:~$ sudo adduser exampleuser
+student@armen-melkonyan:~$ sudo touch /home/exampleuser/examplefile
+student@armen-melkonyan:~$ su exampleuser
+exampleuser@armen-melkonyan:/home/student$ echo "    • What is Linux / Unix? • Name well-known Linux distributions • What is the main advantages of the Linux operating system? • Why will you use Linux OS instead of the other operating systems? • What type of licenses do you know? • What is the difference between GPL and LGPL licenses?" >> ~/examplefile
+exampleuser@armen-melkonyan:/home/student$ cd ~
+exampleuser@armen-melkonyan:~$ cp /usr/bin/cat ~
+exampleuser@armen-melkonyan:~$ chmod u+s ~/cat
+exampleuser@armen-melkonyan:~$ su student
+student@armen-melkonyan:/home/exampleuser$ cd ~
+student@armen-melkonyan:~$ sudo ln -s /home/exampleuser/cat ~/Desktop/catLink
+student@armen-melkonyan:~$ /home/exampleuser/cat /home/exampleuser/examplefile
+student@armen-melkonyan:~$ ~/Desktop/catLink /home/exampleuser/examplefile
+
