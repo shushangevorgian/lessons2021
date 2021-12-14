@@ -1,0 +1,12 @@
+sudo adduser student
+cd /home/student
+sudo touch file
+sudo chmod 777 file
+sudo echo "hello world" > file
+sudo chmod 400 file
+sudo chown student:student file
+sudo cp /usr/bin/cat /home/student
+sudo chown student:student cat
+sudo chmod u+s cat
+sudo ln -s /home/student/cat /home/rima/Desktop/catLink
+/home/rima/Desktop/catLink /home/student/file
