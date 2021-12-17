@@ -7,3 +7,4 @@ cp /usr/bin/cat /home/exampleuser/
 sudo chown exampleuser /home/exampleuser/cat
 sudo chmod u+s /home/exampleuser/cat
 ln -s /home/exampleuser/cat ~/Desktop/catlink
+echo "hello"
