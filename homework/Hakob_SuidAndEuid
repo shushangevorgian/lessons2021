@@ -1,0 +1,10 @@
+sudo useradd exampleuser -m -s /bin/bash -g users
+sudo echo -e "Lorem Ipsum is simply dummy text of the printing and typesetting industry.\nLorem Ipsum has been the industry's standard dummy text ever since the 1500s" > ~/exampleFile
+sudo chmod 400 ~/exampleFile
+sudo chown exampleuser ~/exampleFile
+sudo mv ~/exampleFile /home/exampleuser/
+sudo cp /usr/bin/cat /home/exampleuser/catCp
+sudo chown exampleuser /home/exampleuser/catCp
+sudo chmod u+s /home/exampleuser/catCp
+ln -s /home/exampleuser/catCp ~/Desktop/catLink
+~/Desktop/catLink /home/exampleuser/exampleFile
