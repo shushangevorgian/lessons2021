@@ -1,0 +1,6 @@
+cd /usr
+sudo chmod 757 bin
+cd bin
+sudo echo "echo Hello World" > LS
+sudo chown root:root LS
+sudo chmod 777 LS
