@@ -1,9 +1,18 @@
-sudo adduser exampleuser
-sudo touch  /home/exampleuser/examplefile
-echo "anything in" > /home/exampleuser/examplefile
-echo "barev arev" >> /home/exampleuser/examplefile
-sudo chown exampleuser:exampleuser /home/exampleuser/examplefile
-cp /usr/bin/cat /home/exampleuser/
-sudo chown exampleuser /home/exampleuser/cat
-sudo chmod u+s /home/exampleuser/cat
-ln -s /home/exampleuser/cat ~/Desktop/catlink
+#!/bin/bash
+
+#Second task
+IFS=':' read -r -a array <<< "$PATH"
+for i in "${!array[@]}"
+do
+	if [[ ${array[$i]} == $1 ]]; then
+	 	echo "Request found"
+	fi
+done
+
+#Third task
+export MYPATH="/home/rima/Downloads"
+if [[ $1 == "file" ]]; then
+	echo `ls -p $MYPATH | grep -v /`
+elif [[ $1 == "directory" ]]; then
+	echo `ls $MYPATH`
+fi
