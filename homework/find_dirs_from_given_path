@@ -1,0 +1,20 @@
+#!/bin/bash
+
+
+read -p 'Input path: ' path
+
+#declares variable with inputed path
+export MYPATH="$path"
+
+read -p 'Input type "file" or "dir": ' Type
+
+#gives back dirs || files under path
+if [[ $Type == "dir" ]]
+then
+	ls -d $MYPATH/*/
+elif [[ $Type == "file" ]]
+then
+	ls -f $MYPATH/
+else
+	echo "Typed wrong type"
+fi
