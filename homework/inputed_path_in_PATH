@@ -1,0 +1,54 @@
+#!/bin/bash
+
+read -p 'Input path: ' path
+
+newPath="$PATH"
+pathList=()
+
+#point of cursor from where it will cut the word
+startPoint=0
+
+#array member number
+arrNum=0
+
+#end of cursor where the word ends
+endPoint=0
+
+#loop cuts the whole path into peaces & appends to a list
+for (( i = 0; i <= ${#newPath}; i++ ))
+do
+	if [[ ${newPath:$i:1} == : ]]
+	then
+		endPoint=$i-$startPoint
+		
+		pathList[$arrNum]="${newPath:$startPoint:$endPoint}"
+		
+		let startPoint=$i+1
+		let arrNum=$arrNum+1
+	fi
+done
+
+bool=0
+
+#loop checks inputed path into created list in case of success bool equals 1
+for i in ${pathList[@]}
+do
+	if [[ $path == $i ]]
+	then
+		bool=1
+		break
+	else
+		continue
+	fi
+done
+
+#if boolean value is 1 it shows that there is a path like inputed value else no
+if [[ $bool -eq 1 ]]
+then
+	echo "There is path like $path"
+else
+	echo "There is not path like $path"
+fi
+	
+
+
