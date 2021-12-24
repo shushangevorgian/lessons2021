@@ -1,20 +1,15 @@
 #!/bin/bash
 
-
-read -p 'Input path: ' path
-
-#declares variable with inputed path
-export MYPATH="$path"
-
-read -p 'Input type "file" or "dir": ' Type
+#$1 is first argument (env name)
+#$2 is the second argument (file or dir)
 
 #gives back dirs || files under path
-if [[ $Type == "dir" ]]
+if [[ $2 == "dir" ]]
 then
-	ls -d $MYPATH/*/
-elif [[ $Type == "file" ]]
+	ls -d $1/*/
+elif [[ $2 == "file" ]]
 then
-	ls -f $MYPATH/
+	ls -f $1/
 else
 	echo "Typed wrong type"
 fi
