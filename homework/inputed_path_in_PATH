@@ -17,7 +17,7 @@ endPoint=0
 #loop cuts the whole path into peaces & appends to a list
 for (( i = 0; i <= ${#newPath}; i++ ))
 do
-	if [[ ${newPath:$i:1} == : ]]
+	if [[ ${newPath:$i:1} == : || $i -eq ${#newPath} ]]
 	then
 		endPoint=$i-$startPoint
 		
@@ -27,6 +27,8 @@ do
 		let arrNum=$arrNum+1
 	fi
 done
+
+echo ${pathList[@]}
 
 bool=0
 
