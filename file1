@@ -1,0 +1,20 @@
+#!/bin/bash
+
+PATH=('/usr/local/sbin' '/usr/local/bin' '/usr/sbin' '/usr/bin' '/sbin' '/bin' '/usr/games' '/usr/local/games' '/snap/bin')
+
+echo "Enter Path"
+read path_name
+path_number=0
+
+for i in ${PATH[@]}; do
+	if [[ $i != $path_name ]]; then
+		((path_number+=1))
+	fi
+done
+
+if [[ $path_number == 9 ]]; then
+	echo "The path is not found"
+elif [[ $path_number == 8 ]]; then
+	echo "The path is found"
+fi
+
