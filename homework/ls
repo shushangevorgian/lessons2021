@@ -1,13 +1,16 @@
-#!/bin/bash
-
-echo "Hello World"
-
 #$PATH includes the paths where are binary executable commands
 #each executed command that was being executed is in paths of $PATH
 
 #For first I created this file which name is ls, which will be executed and print "Hello World"
+echo "#!/bin/bash" > ls
+echo "echo "Hello World"" >> ls
 
 #$PATH searches for written command in its value paths, from start to end, as we dont want to run our standart ls command which is in /usr/bin, so that the $PATH doesnt reached to that path, I should add path file ofmy created ls file, of the first part of $PATH value
 
-#For that this command is correct -> export PATH=~/ls:$PATH
+#For that this command is correct -> export PATH=~/:$PATH
 #now whenever the ls command written $PATH first will search under my home directory
+export PATH=~/:$PATH
+
+#Making executable file
+chmod u+x ~/ls
+
