@@ -1,0 +1,84 @@
+#21
+
+echo -n " First number: "
+read num1
+echo -n " Second number:"
+read num2
+echo -n " Third number: "
+read num3
+echo -n " Your number is "
+
+     if [ $num1 -gt $num2 ] && [ $num1 -gt $num3 ]
+     then
+                echo $num1
+
+     elif [ $num2 -gt $num3 ] && [ $num2 -gt $num1 ]
+     then
+                echo $num2
+
+     else
+                echo $num3
+     fi
+ 
+#22
+
+echo -n " First number: "
+read num1
+echo -n " Second number:"
+read num2
+echo -n " Third number: "
+read num3
+echo -n " Your number is "
+
+     if [ $num1 -lt $num2 ] && [ $num1 -lt $num3 ]
+     then
+                echo $num1
+
+     elif [ $num2 -lt $num3 ] && [ $num2 -lt $num1 ]
+     then
+                echo $num2
+
+     else
+                echo $num3
+     fi
+
+#23
+
+echo -n "First number :"
+read num1
+echo -n "Second number :"
+read num2
+echo -n "Third number :"
+read num3
+
+       if [ $num1 -eq 1  ]
+       then
+                echo "True"
+       elif [ $num2 -eq 1  ]
+       then
+                echo "True"
+       elif [ $num3 -eq 1  ]
+       then
+                echo "True"
+       else  
+                echo " False "
+       fi
+
+#24
+
+echo -n "First number :"
+read num1
+echo -n "Second number :"
+read num2
+echo -n "Third number :"
+read num3
+
+       if [ $num1 -eq 2 ] && [ $num2 -eq 2 ] || [ $num1 -eq 2 ] && [ $num3 -eq 2 ] || [ $num2 -eq 2 ] &&  [ $num3 -eq 2 ]
+
+       then
+                echo "True"
+
+       else
+                echo " False "
+       fi
+
