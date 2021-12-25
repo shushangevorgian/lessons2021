@@ -1,0 +1,73 @@
+#25
+
+echo -n "First number :"
+read num1
+echo -n "Second number :"
+read num2
+echo -n "Third number :"
+read num3
+
+       if (( num1 + num2 < num3 )) || (( num2 + num3 < num1 )) || (( num1 + num3 < num2 ))
+
+       then
+                echo "y=1"
+
+       else
+                echo "y=2 "
+       fi
+
+
+#26
+
+echo -n "First number :"
+read num1
+echo -n "Second number :"
+read num2
+echo -n "Third number :"
+read num3
+
+       if (( num1%2 !=0 )) || (( num2%2 !=0 )) || (( num%2 !=0 ))
+
+       then
+                echo "1"
+
+       else
+                echo " 2 "
+       fi
+
+#27
+
+echo -n "First number :"
+read num1
+echo -n "Second number :"
+read num2
+echo -n "Third number :"
+read num3
+
+       if [[ num3-num2 -eq num2-num1 ]]
+
+       then
+                echo "True"
+
+       else
+                echo "False "
+       fi
+
+ #28
+
+echo -n "First number :"
+read num1
+echo -n "Second number :"
+read num2
+echo -n "Third number :"
+read num3
+
+       if [[ num3/num2 -eq num2/num1 ]]
+
+       then
+                echo "True"
+
+       else
+                echo "False "
+       fi
+
